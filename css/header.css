@@ -3,7 +3,7 @@
   height: 70px;
   position: fixed;
   background-color: #fff;
-  border-bottom: 1px solid #ccc;
+  box-shadow: 0px 0px 5px #000;
   z-index: 9999;
 }
 .header .inner {
@@ -28,5 +28,6 @@
   padding: 0 12px;
 }
 .header-nav ul li:hover {
-  background-color: #f1f1f1;
+  background-color: rgb(135, 135, 228);
+  color: #fff;
 }
