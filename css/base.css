@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul,
+li {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+}
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  /* overflow-x: hidden; */
+}
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 1.4;
+  min-width: 320px !important;
+  letter-spacing: -0.68px;
+  word-break: keep-all;
+  /* color: #e8eddf; */
+  font-weight: 400;
+  /* background-color: #202020; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow-x: hidden;
+}
+section {
+  width: 100%;
+  height: 100%;
+}

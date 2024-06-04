@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="image/favicon.ico" />
+    <title>호텔 예약 사이트</title>
+    <!-- js -->
+    <script src="js/header.js"></script>
+    <script src="js/reserve.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/6159533a91.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="modal"></div>
+      <header class="header">
+        <div class="inner">
+          <h1 class="logo">Nostalgia</h1>
+          <div class="header-nav">
+            <ul>
+              <li><a href="#">문의하기</a></li>
+              <li><a href="#">마이페이지</a></li>
+              <li><a href="#">로그인</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <section class="reserve">
+        <div class="inner">
+          <div class="reserve-top">
+            <div class="reserve-text">호텔을 편하게 예약해 보세요.</div>
+            <div class="reserve-img">
+              <img src="image/reserve-img.jpg" alt="예약 배경" />
+            </div>
+          </div>
+          <div class="reserve-menu">
+            <div class="reserve-form">
+              <div class="reserve-sel city-menu">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div class="reserve-place">
+                  <p>여행지</p>
+                  <span>어디로 떠나시나요?</span>
+                  <ul>
+                    <li>서울</li>
+                    <li>제주도</li>
+                    <li>인천</li>
+                    <li>경주</li>
+                    <li>여수</li>
+                    <li>대구</li>
+                    <li>강릉</li>
+                    <li>전주</li>
+                    <li>대전</li>
+                    <li>통영</li>
+                    <li>남해</li>
+                    <li>거제</li>
+                    <li>광주</li>
+                    <li>울산</li>
+                    <li>수원</li>
+                    <li>평창</li>
+                    <li>춘천</li>
+                    <li>가평</li>
+                    <li>태안</li>
+                    <li>고양</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="reserve-sel day">
+                <i class="fa-regular fa-calendar-check"></i>
+                <div class="checkin">
+                  <p>체크인</p>
+                  <span>----.--.--</span>
+                </div>
+                <div class="checkout">
+                  <p>체크아웃</p>
+                  <span>----.--.--</span>
+                </div>
+              </div>
+              <div class="reserve-sel per">
+                <i class="fa-solid fa-bed"></i>
+                <div class="reserve-num">
+                  <p>인원 및 객실</p>
+                  <span>0명,객실 0개</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reserve-btn">
+            <span>예약</span>
+          </div>
+        </div>
+      </section>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>
