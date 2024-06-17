@@ -4,13 +4,15 @@
   background-image: url("../image/reserveback.jpg");
   background-position: center;
 }
-.reserve .inner{
+
+.reserve .inner {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .reserve-top {
   height: 20%;
   display: flex;
@@ -18,103 +20,604 @@
   justify-content: space-between;
   margin-bottom: 50px;
 }
-.reserve-text{
+
+.reserve-text {
   font-size: 60px;
   font-weight: 600;
   color: #fff;
 }
+
 .reserve-menu {
-  width: auto;
+  width: 98%;
   height: 100px;
-  border-radius: 30px;
+  border-radius: 10px;
   box-shadow: 0px 0px 20px #222222;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  background-color: #fff;
+  background-color: #c3defc;
 }
+
 .reserve-form {
   display: flex;
   justify-content: space-between;
+
 }
+
+/* 여행지 선택 */
+.reserve-place {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .reserve-sel {
-  width: 300px;
+  width: 290px;
   height: 80px;
   margin: 0 15px;
-  border-radius: 30px;
+  padding:5px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   position: relative;
   cursor: pointer;
-}
-.reserve-sel:hover {
-  background-color: #f5f5f5;
-}
-.reserve-sel i {
-  margin: 0 15px;
-}
-.city-menu {
-  position: relative;
-}
-.city-menu ul {
-  position: absolute;
-  top: 100px;
-  left: 0%;
-  width: auto;
   background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: none;
-  z-index: 10;
 }
-.city-menu ul.active {
-  display: block;
-}
-.city-menu ul li {
-  list-style-type: none;
-  cursor: pointer;
-  padding: 10px;
-}
-.city-menu ul li:hover {
-  background-color: #f0f0f0;
-}
-.checkin,
-.checkout {
-  width: 40%;
-  position: relative;
-  padding: 0 15px;
-  display: flex;
-  flex-direction: column;
-}
-.checkin:after {
-  content: "";
-  position: absolute;
-  right: 15px;
-  width: 1px;
-  height: 100%;
-  display: inline-block;
-  background-color: #ccc;
-}
-.reserve-sel p {
+
+.reserve-sel h3 {
   color: #adadad;
 }
+
 .reserve-sel span {
   font-weight: 700;
 }
-.city:after,
-.day:after {
-  content: "";
-  position: absolute;
-  right: -15px;
-  width: 1px;
-  height: 100%;
-  display: inline-block;
-  background-color: #ccc;
+
+.reserve-sel i {
+  margin: 0 15px;
 }
+
+.city-menu {
+  position: relative;
+}
+
+.city-search {
+  display: none;
+  position: absolute;
+  left: -9%;
+  top: 115%;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 110%;
+  height: auto;
+  box-shadow: 0px 0px 2px #222222;
+  z-index: 9999;
+}
+
+.city-search-bar {
+  border: 0;
+  padding: 20px 20px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  height: 70px;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 30px 30px 0 0;
+}
+
+.popular-city h3 {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 20px;
+}
+
+.popular-city li {
+  display: flex;
+  font-size: 15px;
+  padding: 10px 20px;
+}
+
+.popular-city li:hover {
+  background-color: #f0f0f0;
+}
+
+.popular-city li i {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.popular-city li p {
+  line-height: 24px;
+}
+
+.popular-city p span:first-child {
+  color: #000;
+}
+
+/* -------------------------------------------------------- */
+/* 체크인 체크아웃 */
+.checktext-box {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.checktext label {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.calendar-container {
+  max-width: 1300px;
+  padding-top: 50px;
+  margin: 0 auto;
+  font-family: "NanumSquareR";
+  display: flex;
+  margin-bottom: 20px;
+  position: absolute;
+  right: -120%;
+  top: 53%;
+  z-index: 9999;
+}
+
+.calendar-middle-wrap {
+  background: #fafbfa;
+  width: 37%;
+  padding: 40px 32px;
+  padding-bottom: 100px;
+}
+.calendar-middle-wrap:first-child{
+  border-radius: 20px 0 0 20px;
+}
+.checkInOutInfo {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafbfa;
+  position: relative;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.calendar-wrap .cal_nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 78px;
+}
+
+.calendar-wrap .cal_nav .year-month {
+  width: 300px;
+  text-align: center;
+  line-height: 1;
+  font-size: 20px;
+}
+
+.calendar-wrap .cal_nav .nav {
+  display: flex;
+  border: 1px solid #333333;
+  border-radius: 5px;
+}
+
+.calendar-wrap .cal_nav .go-prev,
+.calendar-wrap .cal_nav .go-next {
+  display: block;
+  width: 50px;
+  font-size: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-wrap .cal_nav .go-prev::before,
+.calendar-wrap .cal_nav .go-next::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #000;
+  border-width: 3px 3px 0 0;
+  transition: border 0.1s;
+}
+
+.calendar-wrap .cal_nav .go-prev::before {
+  transform: rotate(-135deg);
+}
+
+.calendar-wrap .cal_nav .go-next::before {
+  transform: rotate(45deg);
+}
+
+.calendar-wrap .cal_wrap {
+  padding-top: 40px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.calendar-wrap .cal_wrap::after {
+  top: 368px;
+}
+
+.calendar-wrap .cal_wrap .dates {
+  display: flex;
+  flex-flow: wrap;
+  height: 290px;
+}
+
+.calendar-wrap .cal_wrap .days {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.calendar-wrap .cal_wrap .day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% / 7);
+  text-align: left;
+  color: #2d1d0b;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.calendar-wrap .cal_wrap .day span {
+  z-index: 5;
+}
+
+.calendar-wrap .cal_wrap .day .check_in_out_p {
+  position: absolute;
+  left: 50%;
+  top: 47px;
+  transform: translateX(-50%);
+  font-size: 12px;
+  width: 100%;
+  color: var(--blue);
+}
+
+.calendar-wrap .cal_wrap .checkIn span {
+  color: #fff;
+}
+
+.calendar-wrap .cal_wrap .checkOut span {
+  color: #fff;
+}
+
+.calendar-wrap .cal_wrap .selectDay {
+  position: relative;
+}
+
+.calendar-wrap .cal_wrap .selectDay::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 30px;
+  background: #c3defc;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.calendar-wrap .cal_wrap .checkIn.selectDay::before {
+  left: 50%;
+  width: 50%;
+}
+
+.calendar-wrap .cal_wrap .checkOut.selectDay::before {
+  width: 50%;
+}
+
+.calendar-wrap .cal_wrap .checkIn::after,
+.calendar-wrap .cal_wrap .checkOut::after,
+.calendar-wrap .cal_wrap .checkIn::after {
+  content: '';
+  background: #3f99ff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.calendar-wrap .cal_wrap .day:nth-child(7n - 6) {
+  color: #ed2a61;
+}
+
+.calendar-wrap .cal_wrap .day:nth-child(7n) {
+  color: #3c6ffa;
+}
+
+.calendar-wrap .cal_wrap .day.disable {
+  color: #ddd;
+}
+
+.current.today {
+  background: rgb(242, 242, 242);
+}
+
+.checkInOutInfo>div {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkInOutInfo p {
+  font-size: 24px;
+  color: #494949;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.checkInOutInfo p label {
+  color: #000;
+  font-weight: 600;
+}
+
+.checkInOutInfo p.space {
+  margin-bottom: 10px;
+}
+
+.checkInOutInfo p:nth-child(1) {
+  width: 100%;
+}
+
+.checkInOutInfo p:nth-child(3) {
+  width: 100%;
+}
+
+.checkInOutInfo p span {
+  display: block;
+  font-size: 16px;
+  color: #a1a1a1;
+}
+
+.checkInOutInfo .checkInOutBtn {
+  width: 100px;
+  height: auto;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: #fff;
+  background-color: #3f99ff;
+  position: absolute;
+  bottom: 5%;
+  right: 30%;
+}
+
+.checkInOutInfo .checkInOutBtn:hover {
+  background-color: #3c6ffa;
+}
+
+@media screen and (max-width: 1200px) {
+  .calendar-wrap {
+    flex-wrap: wrap;
+    padding: 2%;
+  }
+
+  .calendar-middle-wrap {
+    width: 49%;
+    padding: 40px 7%;
+  }
+
+  .calendar-middle-wrap .cal_nav {
+    font-size: 30px;
+  }
+
+  .checkInOutInfo {
+    padding: 10px;
+    width: 95%;
+    justify-content: center;
+    align-items: center;
+    background: #fafbfa;
+  }
+
+  .calendar-wrap .cal_wrap {
+    padding-top: 20px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .calendar-wrap .cal_wrap::after {
+    top: 315px;
+  }
+
+  .calendar-wrap .cal_wrap .dates {
+    height: 240px;
+  }
+
+  .calendar-wrap .cal_wrap .day .check_in_out_p {
+    left: 50%;
+    top: 36px;
+    transform: translateX(-50%);
+  }
+
+  .calendar-wrap .cal_wrap .day span {
+    z-index: 5;
+  }
+
+  .calendar-wrap .cal_wrap .checkIn.selectDay::before {
+    left: 50%;
+    width: 50%;
+  }
+
+  .calendar-wrap .cal_wrap .checkOut.selectDay::before {
+    width: 50%;
+  }
+
+  .calendar-wrap .cal_wrap .checkIn::after,
+  .calendar-wrap .cal_wrap .checkOut::after,
+  .calendar-wrap .cal_wrap .checkIn::after {
+    content: '';
+    background: #3f99ff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .checkInOutInfo .checkInOutBtn {
+    bottom: 5%;
+    right: 5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .calendar-wrap {
+    flex-wrap: wrap;
+    padding: 2%;
+  }
+
+  .calendar-middle-wrap {
+    width: 100%;
+    padding: 40px 7%;
+  }
+
+  .calendar-middle-wrap .cal_nav {
+    font-size: 20px;
+  }
+
+  .checkInOutInfo {
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #fafbfa;
+  }
+
+  .calendar-wrap .cal_wrap {
+    padding-top: 20px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .calendar-wrap .cal_wrap::after {
+    top: 315px;
+  }
+
+  .calendar-wrap .cal_wrap .dates {
+    height: 240px;
+  }
+
+  .calendar-wrap .cal_wrap .day .check_in_out_p {
+    left: 50%;
+    top: 36px;
+    transform: translateX(-50%);
+  }
+
+  .calendar-wrap .cal_wrap .day span {
+    z-index: 5;
+  }
+
+  .calendar-wrap .cal_wrap .checkIn.selectDay::before {
+    left: 50%;
+    width: 50%;
+  }
+
+  .calendar-wrap .cal_wrap .checkOut.selectDay::before {
+    width: 50%;
+  }
+
+  .calendar-wrap .cal_wrap .checkIn::after,
+  .calendar-wrap .cal_wrap .checkOut::after,
+  .calendar-wrap .cal_wrap .checkIn::after {
+    content: '';
+    background: #3f99ff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .checkInOutInfo .checkInOutBtn {
+    bottom: 5%;
+    right: 5%;
+  }
+}
+
+/* --------------------------------------------------------- */
+
+/* 인원 객실 선택 */
+.reserve-per-form {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  position: absolute;
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 15px 20px;
+  top: 115%;
+}
+
+.per-num {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.per-num p {
+  display: inline-block;
+  color: #000;
+}
+
+.per-add {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.per-add span {
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  margin: 0 10px;
+}
+
+.per-add span:hover {
+  background-color: rgba(170, 175, 245, 0.2);
+}
+
+.reserve-per-btn {
+  padding: 10px 20px;
+  background-color: #3f99ff;
+  display: inline-block;
+  border-radius: 20px;
+  color: #fff;
+  position: relative;
+  left: 35%;
+}
+
+.reserve-per-btn:hover {
+  background-color: #3c6ffa;
+}
+
+/* 예약 버튼 */
 .reserve-btn {
   width: 100px;
   height: 50px;
@@ -130,6 +633,7 @@
   bottom: 15%;
   cursor: pointer;
 }
+
 .reserve-btn:hover {
   background-color: rgb(92, 92, 175);
 }
