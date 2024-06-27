@@ -1,36 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const reservePlace = document.querySelector('.reserve-place');
     const citySearch = document.getElementById('city-search');
     const cityListItems = document.querySelectorAll('#city-list li');
     const citySearchBar = document.querySelector('.city-search-bar');
     const citySpan = document.querySelector('.reserve-place span');
 
-    reservePlace.addEventListener('click', function() {
-      citySearch.style.display = citySearch.style.display === 'block' ? 'none' : 'block';
+    reservePlace.addEventListener('click', function () {
+        citySearch.style.display = citySearch.style.display === 'block' ? 'none' : 'block';
     });
 
-    cityListItems.forEach(function(item) {
-      item.addEventListener('click', function() {
-        const city = this.querySelector('span:first-child').textContent;
-        citySpan.textContent = city;
-        citySearch.style.display = 'none';
-      });
+    cityListItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+            const city = this.querySelector('span:first-child').textContent;
+            citySpan.textContent = city;
+            citySearch.style.display = 'none';
+        });
     });
 
-    citySearchBar.addEventListener('input', function() {
-      const input = citySearchBar.value.toLowerCase();
-      cityListItems.forEach(function(item) {
-        const cityName = item.textContent.toLowerCase();
-        item.style.display = cityName.includes(input) ? 'flex' : 'none';
-      });
+    citySearchBar.addEventListener('input', function () {
+        const input = citySearchBar.value.toLowerCase();
+        cityListItems.forEach(function (item) {
+            const cityName = item.textContent.toLowerCase();
+            item.style.display = cityName.includes(input) ? 'flex' : 'none';
+        });
     });
 
-    document.addEventListener('click', function(event) {
-      if (!citySearch.contains(event.target) && !reservePlace.contains(event.target)) {
-        citySearch.style.display = 'none';
-      }
-    }); 
-  });
+    document.addEventListener('click', function (event) {
+        if (!citySearch.contains(event.target) && !reservePlace.contains(event.target)) {
+            citySearch.style.display = 'none';
+        }
+    });
+});
 // 체크인 체크아웃 선택------------------------------------------------------------
 // 날짜 포맷 정규식 (yyyy-mm-dd)
 const regexDate = RegExp(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/);
@@ -52,31 +52,31 @@ let checkInDate = "";
 let checkOutDate = "";
 
 document.addEventListener('DOMContentLoaded', function () {
-  const reserveSel = document.querySelector('.checktext-box');
-  const calendarWrap = document.querySelector('.calendar-wrap');
-  const confirmButton = document.querySelector('.checkInOutBtn');
+    const reserveSel = document.querySelector('.checktext-box');
+    const calendarWrap = document.querySelector('.calendar-wrap');
+    const confirmButton = document.querySelector('.checkInOutBtn');
 
-  calendarWrap.style.display = 'none';
-  
-  // 체크인 체크아웃 날짜 설정 창 열기
-  reserveSel.addEventListener('click', function (event) {
-      calendarWrap.style.display = 'block';
-      event.stopPropagation();  // 이벤트 버블링 방지
-  });
+    calendarWrap.style.display = 'none';
 
-  // 확인 버튼 클릭 시
-  confirmButton.addEventListener('click', function (event) {
-      calendarWrap.style.display = 'none';
-      // 여기에 확인 버튼 눌렸을 때의 동작 추가 가능
-  });
+    // 체크인 체크아웃 날짜 설정 창 열기
+    reserveSel.addEventListener('click', function (event) {
+        calendarWrap.style.display = 'block';
+        event.stopPropagation();  // 이벤트 버블링 방지
+    });
 
-  // 캘린더 외부를 클릭하면 닫기
-  document.addEventListener('click', function (event) {
-      const target = event.target;
-      if (!calendarWrap.contains(target) && !reserveSel.contains(target)) {
-          calendarWrap.style.display = 'none';
-      }
-  });
+    // 확인 버튼 클릭 시
+    confirmButton.addEventListener('click', function (event) {
+        calendarWrap.style.display = 'none';
+        // 여기에 확인 버튼 눌렸을 때의 동작 추가 가능
+    });
+
+    // 캘린더 외부를 클릭하면 닫기
+    document.addEventListener('click', function (event) {
+        const target = event.target;
+        if (!calendarWrap.contains(target) && !reserveSel.contains(target)) {
+            calendarWrap.style.display = 'none';
+        }
+    });
 });
 
 window.onload = function () {
@@ -387,20 +387,20 @@ function lastCheckInDate() {
 }
 // 체크인 날짜 표기
 function getCheckIndateHtml() {
-  checkInDate = checkInDate.toString();
-  const formattedDate = checkInDate.substring('0', '4') + "-" + checkInDate.substring('4', '6') + "-" + checkInDate.substring('6', '8') + " ( " + strWeekDay(weekday(checkInDate)) + " )";
-  // Update check_in_day_write label
-  document.querySelector('.check_in_day_write').textContent = formattedDate;
-  return formattedDate;
+    checkInDate = checkInDate.toString();
+    const formattedDate = checkInDate.substring('0', '4') + "-" + checkInDate.substring('4', '6') + "-" + checkInDate.substring('6', '8') + " ( " + strWeekDay(weekday(checkInDate)) + " )";
+    // Update check_in_day_write label
+    document.querySelector('.check_in_day_write').textContent = formattedDate;
+    return formattedDate;
 }
 
 // 체크아웃 날짜 표기
 function getCheckOutdateHtml() {
-  checkOutDate = checkOutDate.toString();
-  const formattedDate = checkOutDate.substring('0', '4') + "-" + checkOutDate.substring('4', '6') + "-" + checkOutDate.substring('6', '8') + " ( " + strWeekDay(weekday(checkOutDate)) + " )";
-  // Update check_out_day_write label
-  document.querySelector('.check_out_day_write').textContent = formattedDate;
-  return formattedDate;
+    checkOutDate = checkOutDate.toString();
+    const formattedDate = checkOutDate.substring('0', '4') + "-" + checkOutDate.substring('4', '6') + "-" + checkOutDate.substring('6', '8') + " ( " + strWeekDay(weekday(checkOutDate)) + " )";
+    // Update check_out_day_write label
+    document.querySelector('.check_out_day_write').textContent = formattedDate;
+    return formattedDate;
 }
 
 // 최대 개월수 체크
@@ -454,3 +454,56 @@ function zf(num) {
 
     return num;
 }
+// 객실 및 인원 선택
+function changeNumber(type, delta) {
+    const numElement = document.getElementById(type + '-num');
+    let num = parseInt(numElement.textContent);
+
+    if (type === 'adult' && num + delta < 1) {
+        num = 1;
+    } else if (num + delta < 0) {
+        num = 0;
+    } else {
+        num += delta;
+    }
+
+    numElement.textContent = num;
+}
+
+function updateDisplay() {
+    const roomNum = document.getElementById('room-num').textContent;
+    const adultNum = document.getElementById('adult-num').textContent;
+    const childNum = document.getElementById('child-num').textContent;
+
+    document.getElementById('room-display').textContent = `객실 ${roomNum}개`;
+    document.getElementById('adult-display').textContent = `성인 ${adultNum}명`;
+    document.getElementById('child-display').textContent = `아동 ${childNum}명`;
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const reserveNum = document.querySelector('.reserve-num');
+    const reservePerForm = document.querySelector('.reserve-per-form');
+    const confirmBtn = document.querySelector('.reserve-per-btn');
+
+    // reserve-num 클릭 시 reserve-per-form 열기
+    reserveNum.addEventListener('click', function() {
+        reservePerForm.style.display = 'block';
+    });
+
+    // 확인 버튼 클릭 시 reserve-per-form 닫기
+    confirmBtn.addEventListener('click', function() {
+        updateDisplay();
+        reservePerForm.style.display = 'none';
+    });
+
+    // 바깥 클릭 시 reserve-per-form 닫기
+    window.addEventListener('click', function(event) {
+        if (!reservePerForm.contains(event.target) && !reserveNum.contains(event.target)) {
+            reservePerForm.style.display = 'none';
+        }
+    });
+
+    // stop propagation to prevent window click event when clicking inside the form
+    reservePerForm.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+});

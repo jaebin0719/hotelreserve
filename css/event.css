@@ -1,0 +1,51 @@
+.event {
+    width: auto;
+    height: auto;
+    padding: 0 451.5px ;
+}
+.event h3{
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin: 20px 0;
+}
+.eventSwiper .swiper-slide img {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.event .swiper-button-next i,
+.event .swiper-button-prev i {
+    position: absolute;
+    color: #000;
+    background-color: #fff;
+    padding: 7px 10px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px 1px #9b9b9b;
+    display: none;
+}
+
+.event:hover .swiper-button-next i
+{
+display: block;
+}
+.event:hover .swiper-button-prev i{
+    display: block;
+}
+.event .swiper-button-next i {
+    left: 5px;
+}
+
+.event .swiper-button-prev i {
+    right: 5px;
+}
+
+.event .swiper-button-next:after,
+.event .swiper-button-prev:after {
+    display: none;
+}
+
+.swiper-pagination-bullet {
+    position: relative;
+    bottom: 20px;
+}

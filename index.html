@@ -5,14 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="image/favicon.ico" />
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <title>Nostalgia</title>
   <!-- js -->
   <script src="js/header.js"></script>
   <script src="js/reserve.js"></script>
+  <script src="js/event.js"></script>
+  <script src="js/popular-hotel.js"></script>
   <!-- css -->
   <link rel="stylesheet" href="css/style.css" />
-  <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <!-- fontawesome -->
   <script src="https://kit.fontawesome.com/6159533a91.js" crossorigin="anonymous"></script>
   <!-- swiper -->
@@ -28,7 +31,7 @@
     <div class="modal"></div>
     <header class="header">
       <div class="inner">
-        <h1 class="logo">Nostalgia</h1>
+        <h1 class="logo"><a href="#">Nostalgia</a></h1>
         <div class="header-nav">
           <ul>
             <li><a href="#">문의하기</a></li>
@@ -42,7 +45,7 @@
       <div class="reserve-img"></div>
       <div class="inner">
         <div class="reserve-top">
-          <div class="reserve-text">원하는 호텔을 찾아보세요</div>
+          <div class="reserve-text">원하는 숙소을 찾아보세요</div>
         </div>
         <div class="reserve-menu">
           <div class="reserve-form">
@@ -175,36 +178,42 @@
             <div class="reserve-sel per">
               <i class="fa-solid fa-bed"></i>
               <div class="reserve-num">
-                <h3>인원 및 객실</h3>
-                <span>0명, 객실 0개</span>
+                <h3>객실 및 인원</h3>
+                <div>
+                  <span id="room-display">객실 0개</span>
+                  <span id="adult-display">성인 0명</span>
+                  <span id="child-display">아동 0명</span>
+                </div>
               </div>
               <div class="reserve-per-form">
-                <p>인원</p>
+                <h4>객실 및 인원</h4>
+                <div class="per-num">
+                  <p>객실</p>
+                  <div class="per-add">
+                    <span onclick="changeNumber('room', -1)"><i class="fa-solid fa-minus"></i></span>
+                    <p id="room-num">0</p>
+                    <span onclick="changeNumber('room', 1)"><i class="fa-solid fa-plus"></i></span>
+                  </div>
+                </div>
                 <div class="per-num">
                   <p>성인</p>
+                  <span class="per-age">만 19세 이상</span>
                   <div class="per-add">
-                    <span>
-                      <i class="fa-solid fa-minus"></i>
-                    </span>
-                    <p>0</p>
-                    <span>
-                      <i class="fa-solid fa-plus"></i>
-                    </span>
+                    <span onclick="changeNumber('adult', -1)"><i class="fa-solid fa-minus"></i></span>
+                    <p id="adult-num">1</p>
+                    <span onclick="changeNumber('adult', 1)"><i class="fa-solid fa-plus"></i></span>
                   </div>
                 </div>
                 <div class="per-num">
-                  <p>유아 및 아동</p>
+                  <p>미성년자</p>
+                  <span class="per-age">만 18세 이하</span>
                   <div class="per-add">
-                    <span>
-                      <i class="fa-solid fa-minus"></i>
-                    </span>
-                    <p>0</p>
-                    <span>
-                      <i class="fa-solid fa-plus"></i>
-                    </span>
+                    <span onclick="changeNumber('child', -1)"><i class="fa-solid fa-minus"></i></span>
+                    <p id="child-num">0</p>
+                    <span onclick="changeNumber('child', 1)"><i class="fa-solid fa-plus"></i></span>
                   </div>
                 </div>
-                <div class="reserve-per-btn">
+                <div class="reserve-per-btn" onclick="updateDisplay()">
                   <span>확인</span>
                 </div>
               </div>
@@ -216,8 +225,219 @@
         </div>
       </div>
     </section>
-
-
+    <section class="event">
+        <h3>이벤트</h3>
+        <div class="swiper eventSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="image/event1.jfif" alt="이벤트1"></div>
+            <div class="swiper-slide"><img src="image/event2.jfif" alt="이벤트2"></div>
+            <div class="swiper-slide"><img src="image/event3.jfif" alt="이벤트3"></div>
+            <div class="swiper-slide"><img src="image/event4.jfif" alt="이벤트4"></div>
+            <div class="swiper-slide"><img src="image/event5.jfif" alt="이벤트5"></div>
+            <div class="swiper-slide"><img src="image/event6.jpg" alt="이벤트6"></div>
+          </div>
+          <div class="swiper-button-next">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+          <div class="swiper-button-prev">
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </section>
+    <section class="popular-hotel">
+        <h3>인기 추천 숙소</h3>
+        <div class="swiper pophotelSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="image/pophotel1.jpg" alt="인기숙소1">
+              <div class="pophotel-text">
+                <div class="pophotel-info">
+                  <span>모텔</span>
+                  <p>월곶 더휴식 이로호텔</p>
+                  <span>월곶역 도보 3분</span>
+                  <div class="hotel-grade">
+                    <div class="hotel-star">
+                      <i class="fa-solid fa-star"></i>
+                      <span>9.5</span>
+                    </div>
+                    <span>957명 평가</span>
+                  </div>
+                </div>
+                <div class="pophotel-price">30,000원</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="image/pophotel2.jpg" alt="인기숙소2">
+              <div class="pophotel-text">
+                <div class="pophotel-info">
+                  <span>모텔</span>
+                  <p>월곶 더휴식 이로호텔</p>
+                  <span>월곶역 도보 3분</span>
+                  <div class="hotel-grade">
+                    <div class="hotel-star">
+                      <i class="fa-solid fa-star"></i>
+                      <span>9.5</span>
+                    </div>
+                    <span>957명 평가</span>
+                  </div>
+                </div>
+                <div class="pophotel-price">30,000원</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="image/pophotel3.jpg" alt="인기숙소3">
+              <div class="pophotel-text">
+                <div class="pophotel-info">
+                  <span>모텔</span>
+                  <p>월곶 더휴식 이로호텔</p>
+                  <span>월곶역 도보 3분</span>
+                  <div class="hotel-grade">
+                    <div class="hotel-star">
+                      <i class="fa-solid fa-star"></i>
+                      <span>9.5</span>
+                    </div>
+                    <span>957명 평가</span>
+                  </div>
+                </div>
+                <div class="pophotel-price">30,000원</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="image/pophotel4.jpg" alt="인기숙소4">
+              <div class="pophotel-text">
+                <div class="pophotel-info">
+                  <span>모텔</span>
+                  <p>월곶 더휴식 이로호텔</p>
+                  <span>월곶역 도보 3분</span>
+                  <div class="hotel-grade">
+                    <div class="hotel-star">
+                      <i class="fa-solid fa-star"></i>
+                      <span>9.5</span>
+                    </div>
+                    <span>957명 평가</span>
+                  </div>
+                </div>
+                <div class="pophotel-price">30,000원</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="image/pophotel5.jpg" alt="인기숙소5">
+              <div class="pophotel-text">
+                <div class="pophotel-info">
+                  <span>모텔</span>
+                  <p>월곶 더휴식 이로호텔</p>
+                  <span>월곶역 도보 3분</span>
+                  <div class="hotel-grade">
+                    <div class="hotel-star">
+                      <i class="fa-solid fa-star"></i>
+                      <span>9.5</span>
+                    </div>
+                    <span>957명 평가</span>
+                  </div>
+                </div>
+                <div class="pophotel-price">30,000원</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="image/pophotel6.jpg" alt="인기숙소6">
+              <div class="pophotel-text">
+                <div class="pophotel-info">
+                  <span>모텔</span>
+                  <p>월곶 더휴식 이로호텔</p>
+                  <span>월곶역 도보 3분</span>
+                  <div class="hotel-grade">
+                    <div class="hotel-star">
+                      <i class="fa-solid fa-star"></i>
+                      <span>9.5</span>
+                    </div>
+                    <span>957명 평가</span>
+                  </div>
+                </div>
+                <div class="pophotel-price">30,000원</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="image/pophotel7.jpg" alt="인기숙소7">
+              <div class="pophotel-text">
+                <div class="pophotel-info">
+                  <span>모텔</span>
+                  <p>월곶 더휴식 이로호텔</p>
+                  <span>월곶역 도보 3분</span>
+                  <div class="hotel-grade">
+                    <div class="hotel-star">
+                      <i class="fa-solid fa-star"></i>
+                      <span>9.5</span>
+                    </div>
+                    <span>957명 평가</span>
+                  </div>
+                </div>
+                <div class="pophotel-price">30,000원</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="image/pophotel8.jpg" alt="인기숙소8">
+              <div class="pophotel-text">
+                <div class="pophotel-info">
+                  <span>모텔</span>
+                  <p>월곶 더휴식 이로호텔</p>
+                  <span>월곶역 도보 3분</span>
+                  <div class="hotel-grade">
+                    <div class="hotel-star">
+                      <i class="fa-solid fa-star"></i>
+                      <span>9.5</span>
+                    </div>
+                    <span>957명 평가</span>
+                  </div>
+                </div>
+                <div class="pophotel-price">30,000원</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="image/pophotel9.jfif" alt="인기숙소9">
+              <div class="pophotel-text">
+                <div class="pophotel-info">
+                  <span>모텔</span>
+                  <p>월곶 더휴식 이로호텔</p>
+                  <span>월곶역 도보 3분</span>
+                  <div class="hotel-grade">
+                    <div class="hotel-star">
+                      <i class="fa-solid fa-star"></i>
+                      <span>9.5</span>
+                    </div>
+                    <span>957명 평가</span>
+                  </div>
+                </div>
+                <div class="pophotel-price">30,000원</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="image/pophotel10.jpg" alt="인기숙소10">
+              <div class="pophotel-text">
+                <div class="pophotel-info">
+                  <span>모텔</span>
+                  <p>월곶 더휴식 이로호텔</p>
+                  <span>월곶역 도보 3분</span>
+                  <div class="hotel-grade">
+                    <div class="hotel-star">
+                      <i class="fa-solid fa-star"></i>
+                      <span>9.5</span>
+                    </div>
+                    <span>957명 평가</span>
+                  </div>
+                </div>
+                <div class="pophotel-price">30,000원</div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+          <div class="swiper-button-prev">
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+        </div>
+    </section>
     <footer class="footer"></footer>
   </div>
 </body>
