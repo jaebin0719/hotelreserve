@@ -1,0 +1,45 @@
+.internal-popular{
+    padding: 0 451.5px ;
+}
+.internal-popular h3{
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin: 20px 0;
+}
+.internal-popular .swiper-slide{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+.internal-img{
+    position: relative;
+    background-color: #000;
+    width: 160px;
+    height: 160px;
+    border-radius: 15px;
+}
+.internal-popular .internal-img img{ 
+    width: 160px;
+    height: 160px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.internal-popular .swiper-slide img:hover{
+    
+}
+.internal-popular .swiper-button-next i,
+.internal-popular .swiper-button-prev i {
+    position: absolute;
+    color: #000;
+    background-color: #fff;
+    padding: 7px 10px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px 1px #9b9b9b;
+}
+.internal-popular .swiper-button-next:after,
+.internal-popular .swiper-button-prev:after {
+    display: none;
+}

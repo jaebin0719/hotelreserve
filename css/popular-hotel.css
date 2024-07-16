@@ -1,0 +1,65 @@
+.popular-hotel{
+    padding: 0 451.5px ;
+}
+.popular-hotel h3{
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin: 20px 0;
+}
+.pophotelSwiper .swiper-slide{
+    cursor: pointer;
+}
+.pophotelSwiper .swiper-slide img{
+    border-radius: 10px;
+}
+.pophotel-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.pophotel-info{
+    line-height: 20px;
+    color: #333;
+    margin:15px 0;
+}
+.pophotel-info span{
+    font-size: 12px;
+}
+.pophotel-info p{
+    font-size: 16px;
+    font-weight: bold;
+}
+.hotel-star{
+    background-color: rgb(255 173 10);
+    display: inline;
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+.pophotel-price{
+    font-size: 18px;
+    font-weight: bold;
+}
+.popular-hotel .swiper-button-next i,
+.popular-hotel .swiper-button-prev i {
+    position: absolute;
+    color: #000;
+    background-color: #fff;
+    padding: 7px 10px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px 1px #9b9b9b;
+}
+.popular-hotel .swiper-button-next i {
+    left: 5px;
+}
+
+.popular-hotel .swiper-button-prev i {
+    right: 5px;
+}
+.popular-hotel .swiper-button-next:after,
+.popular-hotel .swiper-button-prev:after {
+    display: none;
+}
